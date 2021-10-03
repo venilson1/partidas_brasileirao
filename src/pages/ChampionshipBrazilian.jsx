@@ -10,6 +10,7 @@ import { TabList, TabPanel, Tabs } from 'react-tabs';
 import { apiGetMatches } from '../services/apiService';
 import Matches from '../components/Matches';
 import CustomTab from '../components/CustomTab';
+import Classification from '../components/Classification';
 
 export default function ChampionshipBrazilian() {
   const [allMatches, setAllMatches] = useState([]);
@@ -57,8 +58,7 @@ export default function ChampionshipBrazilian() {
             }
           </TabPanel>
           <TabPanel>
-            {/* <Classification /> */}
-            <h1>tab 02</h1>
+            <Classification />
           </TabPanel>
         </Tabs>
       </Main>
