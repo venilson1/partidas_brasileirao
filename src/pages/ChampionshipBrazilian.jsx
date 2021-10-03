@@ -61,8 +61,8 @@ export default function ChampionshipBrazilian() {
             {
               // eslint-disable-next-line array-callback-return
               allMatches.map(({ numero, partidas }) => {
-                if (numero === page) {
-                  return <Classification key={numero} partidas={partidas} numero={numero} />
+                if (numero === allMatches.length) {
+                  return <Classification key={numero} partidas={partidas} />
                 }
               })
             }

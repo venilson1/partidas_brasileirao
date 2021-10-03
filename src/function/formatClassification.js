@@ -28,5 +28,25 @@ export default function formatClassification(partidas) {
     )
   })
 
+  classificacao.sort((a, b) => {
+    return (
+      b.pontos - a.pontos
+    )
+  })
+
+  // eslint-disable-next-line array-callback-return
+  classificacao.sort((a, b) => {
+    if(b.pontos === a.pontos){
+      return b.vitorias - a.vitorias
+    }
+  })
+
+  // eslint-disable-next-line array-callback-return
+  classificacao.sort((a, b) => {
+    if(b.pontos === a.pontos && b.vitorias === a.vitorias){
+      return b.saldo - a.saldo
+    }
+  })
+
   return classificacao;
 }

@@ -1,5 +1,4 @@
 import Matche from "./Matche";
-import { v4 as uuidv4 } from 'uuid'
 
 export default function Matches({ partidas }) {
   return (
@@ -13,10 +12,10 @@ export default function Matches({ partidas }) {
           estadio,
           hora_partida,
           data_partida
-        }) => {
+        }, i) => {
           return (
             <Matche
-              key={uuidv4()}
+              key={i}
               mandante={mandante}
               placar_mandante={placar_mandante}
               visitante={visitante}

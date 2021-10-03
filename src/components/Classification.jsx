@@ -1,7 +1,7 @@
 import formatClassification from "../function/formatClassification";
 import formatName from "../function/formatName";
 
-export default function Classification({ partidas, numero }) {
+export default function Classification({ partidas }) {
 
   let classificacao = formatClassification(partidas);
 
