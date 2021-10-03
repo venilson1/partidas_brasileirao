@@ -8,6 +8,7 @@ import Year from "../components/Year";
 import SlideChooseMatches from '../components/SlideChooseMatches';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import { apiGetMatches } from '../services/apiService';
+import Matches from '../components/Matches';
 
 export default function ChampionshipBrazilian() {
   const [allMatches, setAllMatches] = useState([]);
@@ -42,11 +43,13 @@ export default function ChampionshipBrazilian() {
           </TabList>
 
           <TabPanel>
-            {/* <Matches allMatches={allMatches} /> */}
             <SlideChooseMatches sizeMathes={allMatches.length} setPageProps={setPage} valuePage={page} />
             {
-              allMatches.map(({ partidas, numero }) => {
-                return <div key={numero} >{numero}</div>
+              // eslint-disable-next-line array-callback-return
+              allMatches.map(({ numero, partidas }) => {
+                if (numero === page) {
+                  return <Matches key={numero} partidas={partidas} />
+                }
               })
             }
           </TabPanel>
