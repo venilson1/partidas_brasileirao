@@ -2,7 +2,6 @@ import Matche from "./Matche";
 import { v4 as uuidv4 } from 'uuid'
 
 export default function Matches({ partidas }) {
-  console.log(partidas);
   return (
     <div className=" flex flex-wrap mx-auto p-4 max-w-lg">
       {

@@ -58,7 +58,14 @@ export default function ChampionshipBrazilian() {
             }
           </TabPanel>
           <TabPanel>
-            <Classification />
+            {
+              // eslint-disable-next-line array-callback-return
+              allMatches.map(({ numero, partidas }) => {
+                if (numero === page) {
+                  return <Classification key={numero} partidas={partidas} numero={numero} />
+                }
+              })
+            }
           </TabPanel>
         </Tabs>
       </Main>
