@@ -13,7 +13,7 @@ export default function SlideChooseMatches({ sizeMathes, setPageProps, valuePage
     setPageProps(valuePage + 1);
   }
   return (
-    <div className="flex justify-evenly m-6 p-2 items-center">
+    <div className="flex justify-center m-6 p-2 items-center space-x-10">
       <AiOutlineLeft className="text-2xl cursor-pointer" onClick={handlerPrevPage} />
       <span>Rodada {valuePage}</span>
       <AiOutlineRight className="text-2xl cursor-pointer" onClick={handlerNextPage} />

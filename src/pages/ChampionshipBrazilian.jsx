@@ -6,9 +6,10 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import Year from "../components/Year";
 import SlideChooseMatches from '../components/SlideChooseMatches';
-import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
+import { TabList, TabPanel, Tabs } from 'react-tabs';
 import { apiGetMatches } from '../services/apiService';
 import Matches from '../components/Matches';
+import CustomTab from '../components/CustomTab';
 
 export default function ChampionshipBrazilian() {
   const [allMatches, setAllMatches] = useState([]);
@@ -19,7 +20,9 @@ export default function ChampionshipBrazilian() {
   useEffect(async () => {
     const response = await apiGetMatches(year);
     setAllMatches(response);
+    setPage(1)
   }, [year]);
+
   const years = ['2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
   return (
     <div>
@@ -37,9 +40,9 @@ export default function ChampionshipBrazilian() {
 
       <Main>
         <Tabs>
-          <TabList className="flex justify-center space-x-6">
-            <Tab>Partidas</Tab>
-            <Tab>Classificação</Tab>
+          <TabList className="flex justify-evenly p-2">
+            <CustomTab active={'active'}>Partidas</CustomTab>
+            <CustomTab>Classificação</CustomTab>
           </TabList>
 
           <TabPanel>
@@ -48,7 +51,7 @@ export default function ChampionshipBrazilian() {
               // eslint-disable-next-line array-callback-return
               allMatches.map(({ numero, partidas }) => {
                 if (numero === page) {
-                  return <Matches key={numero} partidas={partidas} />
+                  return <Matches key={numero} partidas={partidas} numero={numero} />
                 }
               })
             }

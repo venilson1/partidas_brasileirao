@@ -1,9 +1,10 @@
 import Matche from "./Matche";
+import { v4 as uuidv4 } from 'uuid'
 
 export default function Matches({ partidas }) {
   console.log(partidas);
   return (
-    <div className=" flex flex-wrap mx-auto p-4">
+    <div className=" flex flex-wrap mx-auto p-4 max-w-lg">
       {
         partidas.map(({
           mandante,
@@ -16,6 +17,7 @@ export default function Matches({ partidas }) {
         }) => {
           return (
             <Matche
+              key={uuidv4()}
               mandante={mandante}
               placar_mandante={placar_mandante}
               visitante={visitante}
