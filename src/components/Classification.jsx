@@ -6,7 +6,7 @@ export default function Classification({ partidas }) {
   let classificacao = formatClassification(partidas);
 
   return (
-    <div className="mx-auto p-4 text-sm mt-8">
+    <div className="text-sm mt-8">
       <table className="table-auto w-full">
         <thead className="h-10">
           <tr>
@@ -14,7 +14,7 @@ export default function Classification({ partidas }) {
             <th>&nbsp;</th>
             <th>&nbsp;</th>
             <th>pts</th>
-            <th>PJ</th>
+            {/* <th>PJ</th> */}
             <th>V</th>
             <th>E</th>
             <th>D</th>

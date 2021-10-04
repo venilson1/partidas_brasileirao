@@ -25,20 +25,20 @@ export default function RawClassification({
 
 
   return (
-    <tr className={`h-10 ${champion} ${demoted}`}>
+    <tr className={`h-10 ${champion} ${demoted} border-b-2`}>
       <th>{posicao}</th>
       <th>
         <img src={`/assets/images/${formatName(clube)}.png`} alt={formatName(clube)} className="h-6" />
       </th>
       <th>{clube}</th>
       <th>{pontos}</th>
-      <th className="font-light">{partidas_jogadas}</th>
-      <th className="font-light">{vitorias}</th>
-      <th className="font-light">{empates}</th>
-      <th className="font-light">{derrotas}</th>
-      <th className="font-light">{gols_marcados}</th>
-      <th className="font-light">{gols_sofridos}</th>
-      <th className="font-light">{saldo}</th>
+      {/* <th className="font-thin text-sm">{partidas_jogadas}</th> */}
+      <th className="font-light text-sm">{vitorias}</th>
+      <th className="font-light text-sm">{empates}</th>
+      <th className="font-light text-sm">{derrotas}</th>
+      <th className="font-light text-sm">{gols_marcados}</th>
+      <th className="font-light text-sm">{gols_sofridos}</th>
+      <th className="font-light text-sm">{saldo}</th>
     </tr>
   )
 }
