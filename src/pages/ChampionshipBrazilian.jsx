@@ -50,9 +50,9 @@ export default function ChampionshipBrazilian() {
             <SlideChooseMatches sizeMathes={allMatches.length} setPageProps={setPage} valuePage={page} />
             {
               // eslint-disable-next-line array-callback-return
-              allMatches.map(({ numero, partidas }) => {
+              allMatches.map(({ numero, partidas }, i) => {
                 if (numero === page) {
-                  return <Matches key={numero} partidas={partidas} numero={numero} />
+                  return <Matches key={i} partidas={partidas} numero={numero} />
                 }
               })
             }
@@ -62,6 +62,11 @@ export default function ChampionshipBrazilian() {
               // eslint-disable-next-line array-callback-return
               allMatches.map(({ numero, partidas }) => {
                 if (numero === allMatches.length) {
+                  return <Classification key={numero} partidas={partidas} />
+                }
+                //2005
+                // 2005 - 53 tamanho - ultima rodada 42
+                if (numero === 42) {
                   return <Classification key={numero} partidas={partidas} />
                 }
               })

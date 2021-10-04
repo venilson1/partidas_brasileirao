@@ -1,7 +1,6 @@
 import Matche from "./Matche";
 
 export default function Matches({ partidas }) {
-  console.log(partidas);
   return (
     <div className=" flex flex-wrap mx-auto p-4 max-w-lg">
       {
