@@ -6,13 +6,13 @@ export default function Classification({ partidas }) {
   let classificacao = formatClassification(partidas);
 
   return (
-    <div className="mx-auto w-2/3 p-4 text-sm font-light mt-8">
+    <div className="mx-auto p-4 text-sm mt-8">
       <table className="table-auto w-full">
-        <thead className="h-10 bg-gray-200">
+        <thead className="h-10">
           <tr>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
-            <th className="w-3/6">&nbsp;</th>
+            <th>&nbsp;</th>
             <th>pts</th>
             <th>PJ</th>
             <th>V</th>
@@ -37,22 +37,21 @@ export default function Classification({ partidas }) {
               saldo
             }, i) => {
               i++
-              console.log(formatName(clube));
               return (
-                <tr className="bg-gray-100 h-10" key={i}>
+                <tr className="h-10" key={i}>
                   <th>{i}</th>
                   <th>
                     <img src={`/assets/images/${formatName(clube)}.png`} alt={formatName(clube)} className="h-6" />
                   </th>
                   <th>{clube}</th>
-                  <th>{pontos}</th>
-                  <th>{partidas_jogadas}</th>
-                  <th>{vitorias}</th>
-                  <th>{empates}</th>
-                  <th>{derrotas}</th>
-                  <th>{gols_marcados}</th>
-                  <th>{gols_sofridos}</th>
-                  <th>{saldo}</th>
+                  <th className="font-light">{pontos}</th>
+                  <th className="font-light">{partidas_jogadas}</th>
+                  <th className="font-light">{vitorias}</th>
+                  <th className="font-light">{empates}</th>
+                  <th className="font-light">{derrotas}</th>
+                  <th className="font-light">{gols_marcados}</th>
+                  <th className="font-light">{gols_sofridos}</th>
+                  <th className="font-light">{saldo}</th>
                 </tr>
               )
             })
