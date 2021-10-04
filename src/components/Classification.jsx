@@ -37,11 +37,12 @@ export default function Classification({ partidas }) {
               saldo
             }, i) => {
               i++
+              console.log(formatName(clube));
               return (
                 <tr className="bg-gray-100 h-10" key={i}>
                   <th>{i}</th>
                   <th>
-                    <img src={`/assets/images/${formatName(clube)}.png`} alt={clube} className="h-6" />
+                    <img src={`/assets/images/${formatName(clube)}.png`} alt={formatName(clube)} className="h-6" />
                   </th>
                   <th>{clube}</th>
                   <th>{pontos}</th>
