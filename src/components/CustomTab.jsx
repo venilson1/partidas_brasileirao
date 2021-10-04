@@ -12,7 +12,7 @@ export default function CustomTab({ children, active }) {
 
   return (
     <Tab>
-      <p className={`cursor-pointer ${active}`} onClick={setActiveLink}>{children}</p>
+      <p className={`cursor-pointer font-medium tracking-wider ${active}`} onClick={setActiveLink}>{children}</p>
     </Tab>
   )
 }
