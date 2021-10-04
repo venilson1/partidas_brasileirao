@@ -1,5 +1,5 @@
 import formatClassification from "../function/formatClassification";
-import formatName from "../function/formatName";
+import RawClassification from "./RawClassification";
 
 export default function Classification({ partidas }) {
 
@@ -38,21 +38,20 @@ export default function Classification({ partidas }) {
             }, i) => {
               i++
               return (
-                <tr className="h-10" key={i}>
-                  <th>{i}</th>
-                  <th>
-                    <img src={`/assets/images/${formatName(clube)}.png`} alt={formatName(clube)} className="h-6" />
-                  </th>
-                  <th>{clube}</th>
-                  <th className="font-light">{pontos}</th>
-                  <th className="font-light">{partidas_jogadas}</th>
-                  <th className="font-light">{vitorias}</th>
-                  <th className="font-light">{empates}</th>
-                  <th className="font-light">{derrotas}</th>
-                  <th className="font-light">{gols_marcados}</th>
-                  <th className="font-light">{gols_sofridos}</th>
-                  <th className="font-light">{saldo}</th>
-                </tr>
+                <RawClassification
+                  key={i}
+                  clube={clube}
+                  pontos={pontos}
+                  vitorias={vitorias}
+                  empates={empates}
+                  derrotas={derrotas}
+                  gols_marcados={gols_marcados}
+                  gols_sofridos={gols_sofridos}
+                  partidas_jogadas={partidas_jogadas}
+                  saldo={saldo}
+                  ultimo_colocado={classificacao.length}
+                  posicao={i}
+                />
               )
             })
           }

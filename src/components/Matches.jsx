@@ -1,6 +1,7 @@
 import Matche from "./Matche";
 
 export default function Matches({ partidas }) {
+  console.log(partidas);
   return (
     <div className=" flex flex-wrap mx-auto p-4 max-w-lg">
       {
@@ -11,7 +12,8 @@ export default function Matches({ partidas }) {
           placar_visitante,
           estadio,
           hora_partida,
-          data_partida
+          data_partida,
+          resultado
         }, i) => {
           return (
             <Matche
@@ -23,6 +25,7 @@ export default function Matches({ partidas }) {
               estadio={estadio}
               hora_partida={hora_partida}
               data_partida={data_partida}
+              resultado={resultado}
             />
           )
         })

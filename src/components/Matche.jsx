@@ -7,7 +7,23 @@ export default function Matche({
   placar_visitante,
   estadio,
   hora_partida,
-  data_partida }) {
+  data_partida,
+  resultado
+}) {
+  let winHome;
+  let loseAway
+
+  let winAway;
+  let loseHome;
+  if (resultado === 'vitoria_mandante') {
+    winHome = 'text-green-500'
+    loseAway = 'text-gray-300'
+  }
+  if (resultado === 'derrota_mandante') {
+    winAway = 'text-green-500'
+    loseHome = 'text-gray-300'
+  }
+
   return (
     <div className=" text-center flex m-2 p-2 min-w-full w-1/2">
       <table className="w-4/6">
@@ -16,15 +32,15 @@ export default function Matche({
             <td className="w-1/6">
               <img src={`/assets/images/${formatName(mandante)}.png`} alt={mandante} className="h-6" />
             </td>
-            <td className="w-4/6">{mandante}</td>
-            <td className="w-1/6">{placar_mandante}</td>
+            <td className={`w-4/6 ${winHome} ${loseHome}`}>{mandante}</td>
+            <td className={`w-1/6 ${winHome} ${loseHome}`}>{placar_mandante}</td>
           </tr>
           <tr>
             <td className="w-1/6">
               <img src={`/assets/images/${formatName(visitante)}.png`} alt={visitante} className="h-6" />
             </td>
-            <td className="w-4/6">{visitante}</td>
-            <td className="w-1/6">{placar_visitante}</td>
+            <td className={`w-4/6 ${winAway} ${loseAway}`}>{visitante}</td>
+            <td className={`w-1/6 ${winAway} ${loseAway}`}>{placar_visitante}</td>
           </tr>
         </tbody>
       </table>

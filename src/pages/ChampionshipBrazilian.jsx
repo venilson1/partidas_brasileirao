@@ -32,7 +32,7 @@ export default function ChampionshipBrazilian() {
       <ScrollingCarousel infinite={false} className="p-4 my-2 flex justify-center">
         {years.map((year, i) => {
           return (
-            <NavLink to={`/brazilian/${year}`} activeClassName="text-red-400" key={i} >
+            <NavLink to={`/brazilian/${year}`} activeClassName="text-red-400 border-b-2 border-red-400" key={i} >
               <Year number={year} />
             </NavLink>
           );
