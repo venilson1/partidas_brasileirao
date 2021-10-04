@@ -32,7 +32,7 @@ export default function ChampionshipBrazilian() {
       <ScrollingCarousel infinite={false} className="p-4 my-2 flex justify-center">
         {years.map((year, i) => {
           return (
-            <NavLink to={`/brazilian/${year}`} activeClassName="text-red-400 border-b-2 border-red-400" key={i} >
+            <NavLink to={`/brazilian/${year}`} activeClassName="text-blue-600 border-b-2 border-blue-600" key={i} >
               <Year number={year} />
             </NavLink>
           );
@@ -64,9 +64,8 @@ export default function ChampionshipBrazilian() {
                 if (numero === allMatches.length) {
                   return <Classification key={numero} partidas={partidas} />
                 }
-                //2005
                 // 2005 - 53 tamanho - ultima rodada 42
-                if (numero === 42) {
+                if (numero === 42 && allMatches.length === 53) {
                   return <Classification key={numero} partidas={partidas} />
                 }
               })

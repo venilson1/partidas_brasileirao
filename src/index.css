@@ -20,6 +20,6 @@ code {
 }
 
 .active {
-  color: red;
-  border-bottom: 1px solid red;
+  color: #0082c6;
+  border-bottom: 1px solid #0082c6;
 }

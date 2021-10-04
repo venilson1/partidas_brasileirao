@@ -16,12 +16,12 @@ export default function Matche({
   let winAway;
   let loseHome;
   if (resultado === 'vitoria_mandante') {
-    winHome = 'text-green-500'
-    loseAway = 'text-gray-300'
+    winHome = 'text-green-900'
+    loseAway = 'text-gray-400'
   }
   if (resultado === 'derrota_mandante') {
-    winAway = 'text-green-500'
-    loseHome = 'text-gray-300'
+    winAway = 'text-green-900'
+    loseHome = 'text-gray-400'
   }
 
   return (
